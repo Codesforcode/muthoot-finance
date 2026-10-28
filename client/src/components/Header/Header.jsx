@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Search, ChevronDown, Menu, X } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api/services';
+const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/services`;
 
 const navigationLinks = [
   { label: 'HOME', href: '#home' },
@@ -135,7 +135,7 @@ function Header() {
           className="flex w-[250px] shrink-0 items-center max-[1450px]:w-[230px] max-[1150px]:w-[200px] max-[900px]:w-auto max-[900px]:flex-1"
         >
           <img
-            src="public/assets/logo/image.png"
+           src="/assets/logo/image.png"
             alt="Muthoot Finance"
             className="block h-auto w-[220px] object-contain max-[1450px]:w-[205px] max-[1150px]:w-[185px] max-[900px]:w-[190px] max-[480px]:w-[150px]"
           />
@@ -367,7 +367,7 @@ function Header() {
 
                 <div className="mt-5 flex min-h-[140px] items-end justify-center overflow-hidden">
                   <img
-                    src="/public/assets/images/image.png"
+                    src="/assets/images/image.png"
                     alt="Brand ambassador"
                     className="relative z-10 max-h-[220px] w-auto object-contain object-bottom"
                     onError={(event) => {
